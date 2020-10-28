@@ -11,5 +11,11 @@
     <h2>{{$book->author}}</h2>
     <h3>{{$book->edition}}</h3>
     <img src="{{$book->image}}" alt="">
+
+<form action="{{route("books.destroy", $book->id)}}" method="POST">
+@csrf
+@method("DELETE")
+<input type="submit" value="Cancella">
+</form>
 </body>
 </html>
